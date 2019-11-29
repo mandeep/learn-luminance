@@ -38,7 +38,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git add * # add all the changes
+          git add * || true # add all the changes
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git commit -ma "Deploy to GitHub Pages."
